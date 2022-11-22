@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffaf4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title{
+    color: salmon;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputContainer{
+    display: flex;
+    justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.inputContainer > .searchMeal{
+    padding: 7px 5px;
+    border-color: salmon;
+    border-radius: 10px;
+    text-align: center;
+    width: 18em;
 }
 
-.App-link {
-  color: #61dafb;
+.page{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardRecette{
+    background-color: white;
+    margin: 1em 1em;
+    border: 1px solid salmon;
+    width: 25em;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.cardRecette > .imgContainer > img{
+    max-width: 25vh;
 }
