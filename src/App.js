@@ -1,26 +1,25 @@
-import axios from 'axios';
-import React, { useState } from "react";
-import Recette from "./components/Recette";
+//CSS
 import './App.css';
+//Router
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Components
+import Recette from "./components/Recette";
+import Blog from "./components/Blog";
 
 const App = () => {
-    const [recette, setRecette] = useState({});
-    const onChange = async (event) => {
-        axios.get(
-             `https://www.themealdb.com/api/json/v1/1/search.php?s=${event.target.value}`
-        ).then((response) => {
-             setRecette(response.data.meals);
-        });
-    };
-    
-
     return (
          <div>
-                <h1 className='title'>Appli Recettes de cuisine</h1>
-                <div className="inputContainer">
-                    <input className='searchMeal' type="text" placeholder="Tapez le nom d'un aliment (en anglais)" onChange={onChange}/>
-                </div>
-                <Recette recette={recette}></Recette>
+            <nav>
+                <a href="/" className='navItem'>Recettes</a>
+                <a href="/blog" className='navItem'>Blog</a>
+            </nav>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Recette/>} />
+                    <Route path="/recettes" element={<Recette/>} />
+                    <Route path="/blog" element={<Blog />} />
+                </Routes>
+            </BrowserRouter>
          </div>
     );
 };
